@@ -1,3 +1,8 @@
 package com.prueba.ms_banking.application.handler;
 
-public interface ICuentaHandler {}
+import com.prueba.ms_banking.application.dto.CuentaRequest;
+import com.prueba.ms_banking.application.dto.CuentaResponse;
+
+public interface ICuentaHandler extends IGenericHandler<CuentaRequest, CuentaResponse,Long> {
+
+}

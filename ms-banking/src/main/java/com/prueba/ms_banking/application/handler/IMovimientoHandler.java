@@ -1,3 +1,8 @@
 package com.prueba.ms_banking.application.handler;
 
-public interface IMovimientoHandler {}
+import com.prueba.ms_banking.application.dto.MovimientoRequest;
+import com.prueba.ms_banking.application.dto.MovimientoResponse;
+
+public interface IMovimientoHandler extends IGenericHandler<MovimientoRequest, MovimientoResponse, Long>{
+
+}
