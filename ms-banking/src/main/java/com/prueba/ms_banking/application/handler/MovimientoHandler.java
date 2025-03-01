@@ -2,32 +2,46 @@ package com.prueba.ms_banking.application.handler;
 
 import com.prueba.ms_banking.application.dto.MovimientoRequest;
 import com.prueba.ms_banking.application.dto.MovimientoResponse;
+import com.prueba.ms_banking.application.mapper.MovimientoRequestMapper;
+import com.prueba.ms_banking.application.mapper.MovimientoResponseMapper;
+import com.prueba.ms_banking.domain.api.IMovimientoServicePort;
 
 import java.util.List;
 
 public class MovimientoHandler implements IMovimientoHandler{
-    @Override
-    public void saveModelIn(MovimientoRequest movimientoRequest) {
 
+    private final IMovimientoServicePort servicePort;
+    private final MovimientoRequestMapper requestMapper;
+    private final MovimientoResponseMapper responseMapper;
+
+    public MovimientoHandler(IMovimientoServicePort servicePort, MovimientoRequestMapper requestMapper, MovimientoResponseMapper responseMapper) {
+        this.servicePort = servicePort;
+        this.requestMapper = requestMapper;
+        this.responseMapper = responseMapper;
+    }
+
+    @Override
+    public void saveModelIn(MovimientoRequest model) {
+        servicePort.saveModel(requestMapper.toModel(model));
     }
 
     @Override
     public List<MovimientoResponse> getAllModelFrom() {
-        return List.of();
+        return responseMapper.toResponseList(servicePort.getAllModel());
     }
 
     @Override
-    public MovimientoResponse getModelFrom(Long aLong) {
-        return null;
+    public MovimientoResponse getModelFrom(Long id) {
+        return responseMapper.toResponse(servicePort.getModel(id));
     }
 
     @Override
-    public void updateModelIn(MovimientoRequest movimientoRequest) {
-
+    public void updateModelIn(MovimientoRequest model) {
+        servicePort.updateModel(requestMapper.toModel(model));
     }
 
     @Override
-    public void deleteModelFrom(Long aLong) {
-
+    public void deleteModelFrom(Long id) {
+        servicePort.deleteModel(id);
     }
 }

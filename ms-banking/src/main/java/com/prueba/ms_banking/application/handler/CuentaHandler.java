@@ -21,26 +21,27 @@ public class CuentaHandler implements ICuentaHandler{
     }
 
     @Override
-    public void saveModelIn(CuentaRequest cuentaRequest) {
+    public void saveModelIn(CuentaRequest model) {
+        servicePort.saveModel(requestMapper.toModel(model));
     }
 
     @Override
     public List<CuentaResponse> getAllModelFrom() {
-        return List.of();
+        return responseMapper.toResponseList(servicePort.getAllModel());
     }
 
     @Override
-    public CuentaResponse getModelFrom(Long aLong) {
-        return null;
+    public CuentaResponse getModelFrom(Long id) {
+        return responseMapper.toResponse(servicePort.getModel(id));
     }
 
     @Override
-    public void updateModelIn(CuentaRequest cuentaRequest) {
-
+    public void updateModelIn(CuentaRequest model) {
+        servicePort.updateModel(requestMapper.toModel(model));
     }
 
     @Override
-    public void deleteModelFrom(Long aLong) {
-
+    public void deleteModelFrom(Long id) {
+        servicePort.deleteModel(id);
     }
 }
