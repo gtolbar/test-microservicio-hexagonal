@@ -1,4 +1,4 @@
-package com.prueba.ms_banking.domain.api;
+package com.prueba.ms_identity.domain.api;
 
 import java.util.List;
 

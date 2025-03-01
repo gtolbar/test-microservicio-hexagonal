@@ -1,4 +1,4 @@
-package com.prueba.ms_banking.domain.model;
+package com.prueba.ms_identity.domain.model;
 
 public class Cliente extends Persona {
 

@@ -1,4 +1,4 @@
-package com.prueba.ms_banking.infraestructure.input.rest;
+package com.prueba.ms_identity.infraestructure.input.rest;
 
 public class ClienteController {
 }

@@ -1,4 +1,4 @@
-package com.prueba.ms_banking.application.dto;
+package com.prueba.ms_identity.application.dto;
 
 public class ClienteRequest {
 }

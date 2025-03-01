@@ -1,4 +1,4 @@
-package com.prueba.ms_banking.application.handler;
+package com.prueba.ms_identity.application.handler;
 
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package com.prueba.ms_banking.infraestructure.output.jpa.repository;
+package com.prueba.ms_identity.infraestructure.output.jpa.repository;
 
 public class IClienteRespository {
 }

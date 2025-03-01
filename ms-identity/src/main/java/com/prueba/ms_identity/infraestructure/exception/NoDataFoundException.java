@@ -1,4 +1,4 @@
-package com.prueba.ms_banking.infraestructure.exception;
+package com.prueba.ms_identity.infraestructure.exception;
 
 public class NoDataFoundException {
 }

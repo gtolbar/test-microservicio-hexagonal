@@ -1,6 +1,6 @@
-package com.prueba.ms_banking.domain.api;
+package com.prueba.ms_identity.domain.api;
 
-import com.prueba.ms_banking.domain.model.Cliente;
+import com.prueba.ms_identity.domain.model.Cliente;
 
 public interface IClienteServicePort extends IGenericServicePort<Cliente,Long> {
 
