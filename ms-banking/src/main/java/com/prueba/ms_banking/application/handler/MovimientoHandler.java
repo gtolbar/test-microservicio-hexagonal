@@ -5,9 +5,13 @@ import com.prueba.ms_banking.application.dto.MovimientoResponse;
 import com.prueba.ms_banking.application.mapper.MovimientoRequestMapper;
 import com.prueba.ms_banking.application.mapper.MovimientoResponseMapper;
 import com.prueba.ms_banking.domain.api.IMovimientoServicePort;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
+@Transactional //ACID principios
 public class MovimientoHandler implements IMovimientoHandler{
 
     private final IMovimientoServicePort servicePort;

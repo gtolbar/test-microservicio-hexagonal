@@ -7,7 +7,11 @@ import com.prueba.ms_identity.application.mapper.ClienteResposeMapper;
 import com.prueba.ms_identity.domain.api.IClienteServicePort;
 
 import java.util.List;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+@Service
+@Transactional //ACID principios
 public class ClienteHandler implements IClienteHandler{
 
     private final IClienteServicePort servicePort;

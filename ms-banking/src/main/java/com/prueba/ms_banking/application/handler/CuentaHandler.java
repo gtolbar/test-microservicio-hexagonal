@@ -5,9 +5,13 @@ import com.prueba.ms_banking.application.dto.CuentaResponse;
 import com.prueba.ms_banking.application.mapper.CuentaRequestMapper;
 import com.prueba.ms_banking.application.mapper.CuentaResponseMapper;
 import com.prueba.ms_banking.domain.api.ICuentaServicePort;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Service
+@Transactional //ACID principios
 public class CuentaHandler implements ICuentaHandler{
 
     private final ICuentaServicePort servicePort;
