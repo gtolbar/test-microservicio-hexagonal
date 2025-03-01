@@ -1,3 +1,7 @@
 package com.prueba.ms_banking.domain.api;
 
-public interface IMovimientoServicePort {}
+import com.prueba.ms_banking.domain.model.Movimiento;
+
+public interface IMovimientoServicePort extends IGenericServicePort<Movimiento,Long>{
+
+}

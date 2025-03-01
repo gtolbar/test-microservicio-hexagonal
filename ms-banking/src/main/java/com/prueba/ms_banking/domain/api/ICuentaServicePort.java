@@ -1,3 +1,7 @@
 package com.prueba.ms_banking.domain.api;
 
-public interface ICuentaServicePort {}
+import com.prueba.ms_banking.domain.model.Cuenta;
+
+public interface ICuentaServicePort extends IGenericServicePort<Cuenta,Long>{
+
+}
