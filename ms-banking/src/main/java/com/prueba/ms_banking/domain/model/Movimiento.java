@@ -1,6 +1,7 @@
 package com.prueba.ms_banking.domain.model;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Movimiento {
 
@@ -10,6 +11,7 @@ public class Movimiento {
     private Double valor;
     private Double saldoDisponible;
     private String numeroCuenta; // Número de cuenta asociada
+    private String transaccionId;
 
     public Movimiento(Long id, LocalDateTime fecha, String tipoMovimiento, Double valor, Double saldoDisponible, String numeroCuenta) {
         this.id = id;
@@ -18,6 +20,7 @@ public class Movimiento {
         this.valor = valor;
         this.saldoDisponible = saldoDisponible;
         this.numeroCuenta = numeroCuenta;
+        this.transaccionId = UUID.randomUUID().toString(); // Genera un ID único
     }
 
     public Long getId() {
@@ -66,5 +69,9 @@ public class Movimiento {
 
     public void setNumeroCuenta(String numeroCuenta) {
         this.numeroCuenta = numeroCuenta;
+    }
+
+    public String getTransaccionId() {
+        return transaccionId;
     }
 }
