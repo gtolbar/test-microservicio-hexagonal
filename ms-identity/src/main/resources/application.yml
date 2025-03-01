@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: ms-identity
+  datasource:
+    url: jdbc:postgresql://localhost:5432/bd_banking
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+
+jpa:
+  database-platform: org.hibernate.dialect.PostgreSQLDialect
+  hibernate:
+    ddl-auto: update
+  show-sql: true
+  properties:
+    hibernate:
+      format_sql: true
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+
