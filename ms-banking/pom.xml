@@ -12,7 +12,7 @@
 	<artifactId>ms-banking</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ms-banking</name>
-	<description>Micro servicio de Cuenta y Movimientos</description>
+	<description>Micro servicio de micro servio banking</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -28,7 +28,6 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
-		<spring-cloud.version>2024.0.0</spring-cloud.version>
 	</properties>
 	<dependencies>
 		<dependency>

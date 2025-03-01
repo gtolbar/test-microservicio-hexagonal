@@ -1,0 +1,1 @@
+public class NoDataFoundException extends RuntimeException {}
