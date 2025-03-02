@@ -22,7 +22,8 @@ public class ClienteJpaAdapter implements IClientePersistenePort {
 
     @Override
     public void saveModel(Cliente model) {
-        if (respository.findById(model.getId()).isPresent()){
+        if (respository.findById(model.getId()).isPresent()
+        || respository.findByIdentificacion(model.getIdentificacion()).isPresent()){
             throw new PersonaAlreadyExistsException();
         }
         respository.save(entityMapper.toEntity(model));
