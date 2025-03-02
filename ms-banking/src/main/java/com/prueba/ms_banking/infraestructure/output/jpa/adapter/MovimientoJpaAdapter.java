@@ -9,6 +9,7 @@ import com.prueba.ms_banking.infraestructure.output.jpa.mapper.MovimientoEntityM
 import com.prueba.ms_banking.infraestructure.output.jpa.repository.IMovimientoRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public class MovimientoJpaAdapter implements IMovimientoPersistencePort {
 
@@ -50,5 +51,16 @@ public class MovimientoJpaAdapter implements IMovimientoPersistencePort {
     @Override
     public void deleteModel(Long id) {
         respository.deleteById(id);
+    }
+
+    @Override
+    public List<Movimiento> getNumeroCuentaModelos(String numeroCuenta) {
+        List<MovimientoEntity> listPersona = respository.findByNumeroCuentaOrderByFechaDesc(numeroCuenta);
+        return entityMapper.toModelList(listPersona);
+    }
+
+    @Override
+    public Optional<Movimiento> getUltimoMovimiento(String numeroCuenta) {
+        return Optional.ofNullable(entityMapper.toModel(respository.findFirstByNumeroCuentaOrderByFechaDesc(numeroCuenta)));
     }
 }

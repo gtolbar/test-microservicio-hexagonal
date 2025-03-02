@@ -35,7 +35,8 @@ public class MovimientoEntity {
 
     @PrePersist
     protected void prePersist() {
-        this.transaccionId = UUID.randomUUID().toString(); // Genera ID único antes de insertar
+        this.transaccionId = UUID.randomUUID().toString();
+        this.fecha = LocalDateTime.now();
     }
 
 }
