@@ -11,7 +11,6 @@ import lombok.Setter;
 public class CuentaEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "numero_cuenta", nullable = false, unique = true)
