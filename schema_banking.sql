@@ -1,19 +1,6 @@
 -- Crear la base de datos si no existe
 CREATE DATABASE bd_banking;
 
--- Creación de la tabla cliente con ID corregido
-CREATE TABLE cliente (
-    id SERIAL PRIMARY KEY,
-    nombre VARCHAR(255) NOT NULL,
-    genero VARCHAR(50) NOT NULL,
-    edad INT NOT NULL CHECK (edad > 0),  -- Asegura que la edad sea positiva
-    identificacion VARCHAR(50) NOT NULL UNIQUE,
-    direccion VARCHAR(255) NOT NULL,
-    telefono VARCHAR(20) NOT NULL,
-    contrasena TEXT NOT NULL,  -- Se recomienda hashear la contraseña
-    estado BOOLEAN NOT NULL DEFAULT TRUE
-);
-
 -- Creación de la tabla cuentas
 CREATE TABLE cuentas (
     id SERIAL PRIMARY KEY,
