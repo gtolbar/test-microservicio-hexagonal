@@ -1,0 +1,29 @@
+server:
+  port: 8080  # Puerto del API Gateway
+
+spring:
+  application:
+    name: ms-gateway
+  cloud:
+    gateway:
+      routes:
+        # Ruta para el microservicio de Identity
+        - id: ms-identity
+          uri: lb://MS-IDENTITY
+          predicates:
+            - Path=/identity/**  # Las peticiones con /identity/ se redirigen a ms-identity
+          filters:
+            - RewritePath=/identity/(?<segment>.*), /$\{segment}  # Elimina "/identity"
+
+        # Ruta para el microservicio de Banking
+        - id: ms-banking
+          uri: lb://MS-BANKING
+          predicates:
+            - Path=/banking/**  # Las peticiones con /banking/ se redirigen a ms-banking
+          filters:
+            - RewritePath=/banking/(?<segment>.*), /$\{segment}  # Elimina "/banking"
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/  # Conectar con Eureka Server
