@@ -1,6 +1,5 @@
 package com.prueba.ms_identity.application.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +7,6 @@ import lombok.Setter;
 @Setter
 public class ClienteRequest {
 
-    @JsonIgnore
     private Long id;
     private String nombre;
     private String genero;
@@ -16,8 +14,7 @@ public class ClienteRequest {
     private String identificacion;
     private String direccion;
     private String telefono;
-
-    private String contraseña;
+    private String contrasena;
     private Boolean estado;
 
 }

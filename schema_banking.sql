@@ -10,7 +10,7 @@ CREATE TABLE cliente (
     identificacion VARCHAR(50) NOT NULL UNIQUE,
     direccion VARCHAR(255) NOT NULL,
     telefono VARCHAR(20) NOT NULL,
-    contraseña TEXT NOT NULL,  -- Se recomienda hashear la contraseña
+    contrasena TEXT NOT NULL,  -- Se recomienda hashear la contrasena
     estado BOOLEAN NOT NULL DEFAULT TRUE
 );
 

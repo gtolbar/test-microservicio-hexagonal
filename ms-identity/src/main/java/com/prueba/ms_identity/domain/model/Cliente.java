@@ -3,7 +3,7 @@ package com.prueba.ms_identity.domain.model;
 public class Cliente extends Persona {
 
     private Long id;
-    private String contraseña;
+    private String contrasena;
     private boolean estado;
 
     public Cliente(String telefono, String direccion, String identificacion, int edad, String genero, String nombre) {
@@ -18,12 +18,12 @@ public class Cliente extends Persona {
         this.id = id;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getcontrasena() {
+        return contrasena;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setcontrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public boolean isEstado() {
