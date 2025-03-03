@@ -13,7 +13,13 @@ END $$;
 CREATE TABLE IF NOT EXISTS cliente (
     id SERIAL PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
-    documento VARCHAR(50) UNIQUE NOT NULL
+    genero VARCHAR(50) NOT NULL,
+    edad INT NOT NULL,
+    identificacion VARCHAR(50) UNIQUE NOT NULL,
+    direccion VARCHAR(255) NOT NULL,
+    telefono VARCHAR(20) NOT NULL,
+    contrasena VARCHAR(255) NOT NULL,
+    estado BOOLEAN NOT NULL DEFAULT TRUE
 );
 
 -- Creación de la tabla cuentas
