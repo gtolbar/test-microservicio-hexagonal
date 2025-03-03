@@ -5,7 +5,6 @@ import com.prueba.ms_identity.application.dto.ClienteResponse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.http.HttpStatus;
@@ -29,14 +28,14 @@ public class ClienteControllerTests {
     @BeforeEach
     void setUp() {
         clienteRequest = new ClienteRequest();
-        clienteRequest.setId(1L);  // Opcional, si la BD genera el ID automáticamente puedes omitirlo
+        clienteRequest.setId(1L);
         clienteRequest.setNombre("Juan Pérez");
         clienteRequest.setGenero("Masculino");
         clienteRequest.setEdad(30);
         clienteRequest.setIdentificacion("123456789");
         clienteRequest.setDireccion("Calle 123, Ciudad");
         clienteRequest.setTelefono("987654321");
-        clienteRequest.setContrasena("secreta123"); // Este dato podría omitirse si no se usa en la API de lectura
+        clienteRequest.setContrasena("secreta123");
         clienteRequest.setEstado(true);
     }
 

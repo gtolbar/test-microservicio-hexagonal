@@ -87,7 +87,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/identity/clientes",
+							"raw": "http://localhost:8080/identity/clientes/",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -95,7 +95,8 @@
 							"port": "8080",
 							"path": [
 								"identity",
-								"clientes"
+								"clientes",
+								""
 							]
 						},
 						"description": "Generated from cURL: curl -X GET \"http://localhost:8080/clientes/1\" \\\n     -H \"Accept: application/json\""
