@@ -14,6 +14,10 @@ spring:
             - Path=/identity/**  # Las peticiones con /identity/ se redirigen a ms-identity
           filters:
             - RewritePath=/identity/(?<segment>.*), /$\{segment}  # Elimina "/identity"
+            - name: CircuitBreaker
+              args:
+                name: identityCircuitBreaker
+                fallbackUri: forward:/fallback/identity
 
         # Ruta para el microservicio de Banking
         - id: ms-banking
@@ -22,8 +26,34 @@ spring:
             - Path=/banking/**  # Las peticiones con /banking/ se redirigen a ms-banking
           filters:
             - RewritePath=/banking/(?<segment>.*), /$\{segment}  # Elimina "/banking"
+            - name: CircuitBreaker
+              args:
+                name: bankingCircuitBreaker
+                fallbackUri: forward:/fallback/banking
+
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/  # Conectar con Eureka Server
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      identityCircuitBreaker:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        failureRateThreshold: 50  # Abre el circuito si el 50% de las solicitudes fallan
+        waitDurationInOpenState: 10s  # Espera 10s antes de intentar reintentar
+        permittedNumberOfCallsInHalfOpenState: 5
+        minimumNumberOfCalls: 10
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+      bankingCircuitBreaker:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 5
+        minimumNumberOfCalls: 10
+        automaticTransitionFromOpenToHalfOpenEnabled: true
