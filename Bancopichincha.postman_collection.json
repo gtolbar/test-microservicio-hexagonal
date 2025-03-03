@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "387c4439-3130-4034-8700-e062b031c7f2",
+		"name": "Bancopichincha",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15505155"
+	},
+	"item": [
+		{
+			"name": "ms clientes",
+			"item": [
+				{
+					"name": "Guardar un cliente",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 57,\n  \"nombre\": \"Juan Pérez\",\n  \"genero\": \"Masculino\",\n  \"edad\": 30,\n  \"identificacion\": \"1274589689\",\n  \"direccion\": \"Av. Principal 123\",\n  \"telefono\": \"987654321\",\n  \"contrasena\": \"secreta123\",\n  \"estado\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/identity/clientes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"identity",
+								"clientes",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/clientes/\" \\\n     -H \"Content-Type: application/json\" \\\n     -d '{\n           \"nombre\": \"Juan Pérez\",\n           \"email\": \"juan.perez@example.com\",\n           \"telefono\": \"123456789\"\n         }'"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener un cliente por ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/identity/clientes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"identity",
+								"clientes",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:8080/clientes/1\" \\\n     -H \"Accept: application/json\""
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los clientes",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/identity/clientes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"identity",
+								"clientes"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:8080/clientes/1\" \\\n     -H \"Accept: application/json\""
+					},
+					"response": []
+				},
+				{
+					"name": "delete clientes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/identity/clientes/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"identity",
+								"clientes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ms banking",
+			"item": [
+				{
+					"name": "Crear una cuenta",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1,\n    \"numeroCuenta\": \"123456789\",\n    \"tipoCuenta\": \"Ahorro\",\n    \"saldoInicial\": 1000.0,\n    \"estado\": true,\n    \"clienteId\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/banking/cuentas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"banking",
+								"cuentas",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/clientes\" \\\n     -H \"Content-Type: application/json\" \\\n     -d '{\n           \"id\": 1,\n           \"numeroCuenta\": \"123456789\",\n           \"tipoCuenta\": \"Ahorro\",\n           \"saldoInicial\": 1000.0,\n           \"estado\": true,\n           \"clienteId\": 1\n         }'"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener una cuenta por ID",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/banking/cuentas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"banking",
+								"cuentas",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:8080/clientes\" \\\n     -H \"Accept: application/json\""
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todas las cuentas ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/banking/cuentas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"banking",
+								"cuentas",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:8080/clientes\" \\\n     -H \"Accept: application/json\""
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar una cuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/banking/cuentas/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"banking",
+								"cuentas",
+								"1"
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:8080/clientes\" \\\n     -H \"Accept: application/json\""
+					},
+					"response": []
+				},
+				{
+					"name": "Crear un movimiento Deposito",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 10,\n    \"numeroCuenta\": \"0000\",\n    \"tipoMovimiento\": \"Depósito\",\n    \"valor\": 1500.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/banking/movimientos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"banking",
+								"movimientos",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/movimientos\" \\\n     -H \"Content-Type: application/json\" \\\n     -d '{\n           \"id\": 1,\n           \"numeroCuenta\": \"123456789\",\n           \"tipoMovimiento\": \"Depósito\",\n           \"valor\": 500.0\n         }'"
+					},
+					"response": []
+				},
+				{
+					"name": "Crear un movimiento Retiro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 11,\n    \"numeroCuenta\": \"0000\",\n    \"tipoMovimiento\": \"Retiro\",\n    \"valor\": 500.0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/banking/movimientos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"banking",
+								"movimientos",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl -X POST \"http://localhost:8080/movimientos\" \\\n     -H \"Content-Type: application/json\" \\\n     -d '{\n           \"id\": 1,\n           \"numeroCuenta\": \"123456789\",\n           \"tipoMovimiento\": \"Depósito\",\n           \"valor\": 500.0\n         }'"
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener todos los movimientos ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/banking/movimientos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"banking",
+								"movimientos",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:8080/movimientos\" \\\n     -H \"Accept: application/json\""
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar un movimiento",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/banking/movimientos/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"banking",
+								"movimientos",
+								""
+							]
+						},
+						"description": "Generated from cURL: curl -X GET \"http://localhost:8080/movimientos\" \\\n     -H \"Accept: application/json\""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
