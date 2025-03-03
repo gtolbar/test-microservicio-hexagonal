@@ -35,7 +35,7 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka/  # Conectar con Eureka Server
+      defaultZone: http://ms-eureka:8761/eureka/  # Conectar con Eureka Server
 
 resilience4j:
   circuitbreaker:

@@ -7,6 +7,8 @@ services:
       - "8020:8020"
     depends_on:
       - ms-eureka
+    networks:
+      - bancopichincha_network
 
   ms-identity:
     build: ./ms-identity
@@ -14,6 +16,8 @@ services:
       - "8010:8010"
     depends_on:
       - ms-eureka
+    networks:
+      - bancopichincha_network
 
   ms-eureka:
     build: ./ms-eureka
@@ -21,6 +25,8 @@ services:
       - "8761:8761"
     depends_on:
       - postgres
+    networks:
+      - bancopichincha_network
 
   ms-gateway:
     build: ./ms-gateway
@@ -30,6 +36,8 @@ services:
       - ms-eureka
       - ms-identity
       - ms-banking
+    networks:
+      - bancopichincha_network
 
   postgres:
     image: postgres:15
@@ -37,7 +45,11 @@ services:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: root
       POSTGRES_DB: bd_banking
-    ports:
-      - "5432:5432"
+    networks:
+      - bancopichincha_network
     volumes:
       - ./schema_banking.sql:/docker-entrypoint-initdb.d/schema_banking.sql
+
+networks:
+  bancopichincha_network:
+    driver: bridge
