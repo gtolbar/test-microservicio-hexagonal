@@ -41,6 +41,6 @@ CREATE TABLE IF NOT EXISTS movimientos (
     valor NUMERIC(15,2) NOT NULL CHECK (valor > 0),
     saldo_disponible NUMERIC(15,2) NOT NULL,
     numero_cuenta VARCHAR(50) NOT NULL,
-    transaccion_id UUID NOT NULL UNIQUE DEFAULT gen_random_uuid(),
+    transaccion_id VARCHAR(100) NOT NULL,
     CONSTRAINT fk_movimiento_cuenta FOREIGN KEY (numero_cuenta) REFERENCES cuentas(numero_cuenta) ON DELETE CASCADE
 );

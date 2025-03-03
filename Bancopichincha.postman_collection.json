@@ -25,7 +25,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"id\": 57,\n  \"nombre\": \"Juan Pérez\",\n  \"genero\": \"Masculino\",\n  \"edad\": 30,\n  \"identificacion\": \"1274589689\",\n  \"direccion\": \"Av. Principal 123\",\n  \"telefono\": \"987654321\",\n  \"contrasena\": \"secreta123\",\n  \"estado\": true\n}",
+							"raw": "{\n  \"id\": 1,\n  \"nombre\": \"Juan Pérez\",\n  \"genero\": \"Masculino\",\n  \"edad\": 30,\n  \"identificacion\": \"12789689\",\n  \"direccion\": \"Av. Principal 123\",\n  \"telefono\": \"987654321\",\n  \"contrasena\": \"secreta123\",\n  \"estado\": true\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -141,7 +141,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 1,\n    \"numeroCuenta\": \"123456789\",\n    \"tipoCuenta\": \"Ahorro\",\n    \"saldoInicial\": 1000.0,\n    \"estado\": true,\n    \"clienteId\": 3\n}",
+							"raw": "{\n    \"id\": 1,\n    \"numeroCuenta\": \"123456789\",\n    \"tipoCuenta\": \"Ahorro\",\n    \"saldoInicial\": 1000.0,\n    \"estado\": true,\n    \"clienteId\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -258,7 +258,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 10,\n    \"numeroCuenta\": \"0000\",\n    \"tipoMovimiento\": \"Depósito\",\n    \"valor\": 1500.0\n}",
+							"raw": "{\n    \"id\": 1,\n    \"numeroCuenta\": \"123456789\",\n    \"tipoMovimiento\": \"Depósito\",\n    \"valor\": 1500.0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -294,7 +294,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"id\": 11,\n    \"numeroCuenta\": \"0000\",\n    \"tipoMovimiento\": \"Retiro\",\n    \"valor\": 500.0\n}",
+							"raw": "{\n    \"id\": 11,\n    \"numeroCuenta\": \"123456789\",\n    \"tipoMovimiento\": \"Retiro\",\n    \"valor\": 500.0\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -356,7 +356,7 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8080/banking/movimientos/",
+							"raw": "http://localhost:8080/banking/movimientos/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -365,7 +365,7 @@
 							"path": [
 								"banking",
 								"movimientos",
-								""
+								"1"
 							]
 						},
 						"description": "Generated from cURL: curl -X GET \"http://localhost:8080/movimientos\" \\\n     -H \"Accept: application/json\""
