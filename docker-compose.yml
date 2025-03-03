@@ -1,0 +1,43 @@
+version: '1.0' # Iniciar con docker-compose up --build -d
+
+services:
+  ms-banking:
+    build: ./ms-banking
+    ports:
+      - "8020:8020"
+    depends_on:
+      - ms-eureka
+
+  ms-identity:
+    build: ./ms-identity
+    ports:
+      - "8010:8010"
+    depends_on:
+      - ms-eureka
+
+  ms-eureka:
+    build: ./ms-eureka
+    ports:
+      - "8761:8761"
+    depends_on:
+      - postgres
+
+  ms-gateway:
+    build: ./ms-gateway
+    ports:
+      - "8080:8080"
+    depends_on:
+      - ms-eureka
+      - ms-identity
+      - ms-banking
+
+  postgres:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: bd_banking
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./schema_banking.sql:/docker-entrypoint-initdb.d/schema_banking.sql
